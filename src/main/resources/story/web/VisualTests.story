@@ -1,12 +1,9 @@
-Description: Simple visual tests;
-
-Scenario: Open google search main page
-Given I am on a page with the URL 'https://www.example.com/'
-
-Scenario: Visual test of a page
-When I compare against baseline with `page`
-
-Scenario: Visual test of context element
-Given I am on a page with the URL 'https://github.com/vividus-framework'
-When I change context to an element by By.xpath(//img[@itemprop])
-When I compare against baseline with `vividus-logo`
+Scenario: Sign Up to the application
+Given I am on the main application page
+When I click on element located `By.xpath(//span[text()="Sign in"])`
+When I click on element located `By.xpath(//span[text()="Register now"])`
+When I click on element located `By.xpath(//span[text()="16 or over"])`
+When I fill <Day>, <Month>, <Year> in the registration form
+Examples:
+|Day               |Month            |Year                  |
+|#{randomInt(1,28) |#{randomInt(1,28)|#{randomInt(1900,2003)|
